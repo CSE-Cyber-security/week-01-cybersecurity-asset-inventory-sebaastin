@@ -1,7 +1,9 @@
 assets = []
+
 asset_types = ["Workstation", "Server", "Router", "Switch", "Application"]
 risk_levels = ["Low", "Medium", "High", "Critical"]
 security_statuses = ["Secure", "Warning", "Vulnerable"]
+
 
 # Sample Asset
 asset = {
@@ -20,22 +22,49 @@ assets.append(asset)
 
 # Add Asset
 def add_asset():
+    asset_id = input("Asset ID: ")
+    asset_name = input("Asset Name: ")
+
     while True:
-    asset_type = input("Asset Type: ")
+        asset_type = input("Asset Type: ")
 
-    if asset_type in asset_types:
-        break
+        if asset_type in asset_types:
+            break
 
-    print("Invalid Asset Type!")
+        print("Invalid Asset Type!")
+        print("Choose: Workstation, Server, Router, Switch, Application")
+
+    ip_address = input("IP Address: ")
+    operating_system = input("Operating System: ")
+    department = input("Department: ")
+
+    while True:
+        risk_level = input("Risk Level: ")
+
+        if risk_level in risk_levels:
+            break
+
+        print("Invalid Risk Level!")
+        print("Choose: Low, Medium, High, Critical")
+
+    while True:
+        security_status = input("Security Status: ")
+
+        if security_status in security_statuses:
+            break
+
+        print("Invalid Security Status!")
+        print("Choose: Secure, Warning, Vulnerable")
+
     asset = {
-        "id": input("Asset ID: "),
-        "name": input("Asset Name: "),
-        "type": input("Asset Type: "),
-        "ip": input("IP Address: "),
-        "os": input("Operating System: "),
-        "department": input("Department: "),
-        "risk": input("Risk Level: "),
-        "status": input("Security Status: ")
+        "id": asset_id,
+        "name": asset_name,
+        "type": asset_type,
+        "ip": ip_address,
+        "os": operating_system,
+        "department": department,
+        "risk": risk_level,
+        "status": security_status
     }
 
     assets.append(asset)
@@ -90,8 +119,26 @@ def update_asset():
         if asset["id"] == update_id:
             asset["ip"] = input("Enter new IP Address: ")
             asset["os"] = input("Enter new Operating System: ")
-            asset["risk"] = input("Enter new Risk Level: ")
-            asset["status"] = input("Enter new Security Status: ")
+
+            while True:
+                new_risk = input("Enter new Risk Level: ")
+
+                if new_risk in risk_levels:
+                    asset["risk"] = new_risk
+                    break
+
+                print("Invalid Risk Level!")
+                print("Choose: Low, Medium, High, Critical")
+
+            while True:
+                new_status = input("Enter new Security Status: ")
+
+                if new_status in security_statuses:
+                    asset["status"] = new_status
+                    break
+
+                print("Invalid Security Status!")
+                print("Choose: Secure, Warning, Vulnerable")
 
             print("Asset updated successfully!")
             return
