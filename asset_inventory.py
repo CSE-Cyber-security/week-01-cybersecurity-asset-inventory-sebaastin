@@ -12,3 +12,15 @@ asset = {
 }
 
 assets.append(asset)
+
+print("CYBERSECURITY ASSET INVENTORY")
+print("============================")
+
+print("Asset ID :", asset["id"])
+print("Asset Name :", asset["name"])
+print("Asset Type :", asset["type"])
+print("IP Address :", asset["ip"])
+print("OS :", asset["os"])
+print("Department :", asset["department"])
+print("Risk Level :", asset["risk"])
+print("Status :", asset["status"])
