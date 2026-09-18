@@ -94,3 +94,28 @@ def search_asset():
             return
 
     print("Asset not found!")
+    while True:
+    print("\n1. Add Asset")
+    print("2. Display Assets")
+    print("3. Search Asset")
+    print("4. Update Asset")
+    print("5. Delete Asset")
+    print("6. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        add_asset()
+    elif choice == "2":
+        display_assets()
+    elif choice == "3":
+        search_asset()
+    elif choice == "4":
+        update_asset()
+    elif choice == "5":
+        delete_asset()
+    elif choice == "6":
+        print("Exiting...")
+        break
+    else:
+        print("Invalid choice!")
