@@ -20,6 +20,13 @@ assets.append(asset)
 
 # Add Asset
 def add_asset():
+    while True:
+    asset_type = input("Asset Type: ")
+
+    if asset_type in asset_types:
+        break
+
+    print("Invalid Asset Type!")
     asset = {
         "id": input("Asset ID: "),
         "name": input("Asset Name: "),
