@@ -24,3 +24,17 @@ print("OS :", asset["os"])
 print("Department :", asset["department"])
 print("Risk Level :", asset["risk"])
 print("Status :", asset["status"])
+def add_asset():
+    asset = {
+        "id": input("Asset ID: "),
+        "name": input("Asset Name: "),
+        "type": input("Asset Type: "),
+        "ip": input("IP Address: "),
+        "os": input("Operating System: "),
+        "department": input("Department: "),
+        "risk": input("Risk Level: "),
+        "status": input("Security Status: ")
+    }
+
+    assets.append(asset)
+    print("Asset added successfully!")
