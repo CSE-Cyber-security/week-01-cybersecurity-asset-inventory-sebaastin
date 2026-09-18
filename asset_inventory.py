@@ -92,7 +92,7 @@ def delete_asset():
             return
 
     print("Asset not found!")
-    while True:
+while True:
     print("\n1. Add Asset")
     print("2. Display Assets")
     print("3. Search Asset")
