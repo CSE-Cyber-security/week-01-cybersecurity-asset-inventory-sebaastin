@@ -1,5 +1,6 @@
 assets = []
 
+# Sample Asset
 asset = {
     "id": "A101",
     "name": "HR-PC-01",
@@ -13,17 +14,8 @@ asset = {
 
 assets.append(asset)
 
-print("CYBERSECURITY ASSET INVENTORY")
-print("============================")
 
-print("Asset ID :", asset["id"])
-print("Asset Name :", asset["name"])
-print("Asset Type :", asset["type"])
-print("IP Address :", asset["ip"])
-print("OS :", asset["os"])
-print("Department :", asset["department"])
-print("Risk Level :", asset["risk"])
-print("Status :", asset["status"])
+# Add Asset
 def add_asset():
     asset = {
         "id": input("Asset ID: "),
@@ -38,8 +30,15 @@ def add_asset():
 
     assets.append(asset)
     print("Asset added successfully!")
+
+
+# Display Assets
 def display_assets():
-    print("\nCYBERSECURITY ASSET INVENTORY")
+    print("\n===== CYBERSECURITY ASSET INVENTORY =====")
+
+    if not assets:
+        print("No assets available.")
+        return
 
     for asset in assets:
         print("----------------------------")
@@ -51,12 +50,15 @@ def display_assets():
         print("Department :", asset["department"])
         print("Risk Level :", asset["risk"])
         print("Status :", asset["status"])
+
+
+# Search Asset
 def search_asset():
     search_id = input("Enter Asset ID to search: ")
 
     for asset in assets:
         if asset["id"] == search_id:
-            print("Asset Found!")
+            print("\nAsset Found!")
             print("Asset ID :", asset["id"])
             print("Asset Name :", asset["name"])
             print("Asset Type :", asset["type"])
@@ -68,6 +70,9 @@ def search_asset():
             return
 
     print("Asset not found!")
+
+
+# Update Asset
 def update_asset():
     update_id = input("Enter Asset ID to update: ")
 
@@ -82,6 +87,9 @@ def update_asset():
             return
 
     print("Asset not found!")
+
+
+# Delete Asset
 def delete_asset():
     delete_id = input("Enter Asset ID to delete: ")
 
@@ -92,28 +100,69 @@ def delete_asset():
             return
 
     print("Asset not found!")
+
+
+# Show Statistics
+def show_statistics():
+    total = len(assets)
+    critical = 0
+    high = 0
+    medium = 0
+    vulnerable = 0
+
+    for asset in assets:
+        if asset["risk"] == "Critical":
+            critical += 1
+        elif asset["risk"] == "High":
+            high += 1
+        elif asset["risk"] == "Medium":
+            medium += 1
+
+        if asset["status"] == "Vulnerable":
+            vulnerable += 1
+
+    print("\n===== ASSET STATISTICS =====")
+    print("Total Assets :", total)
+    print("Critical Assets :", critical)
+    print("High Risk Assets :", high)
+    print("Medium Risk Assets :", medium)
+    print("Vulnerable Assets :", vulnerable)
+
+
+# Main Menu
 while True:
-    print("\n1. Add Asset")
+    print("\n===== ASSET INVENTORY MENU =====")
+    print("1. Add Asset")
     print("2. Display Assets")
     print("3. Search Asset")
     print("4. Update Asset")
     print("5. Delete Asset")
-    print("6. Exit")
+    print("6. Show Statistics")
+    print("7. Exit")
 
     choice = input("Enter your choice: ")
 
     if choice == "1":
         add_asset()
+
     elif choice == "2":
         display_assets()
+
     elif choice == "3":
         search_asset()
+
     elif choice == "4":
         update_asset()
+
     elif choice == "5":
         delete_asset()
+
     elif choice == "6":
+        show_statistics()
+
+    elif choice == "7":
         print("Exiting...")
         break
+
     else:
         print("Invalid choice!")
