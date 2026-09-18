@@ -84,3 +84,13 @@ def search_asset():
             return
 
     print("Asset not found!")
+    def delete_asset():
+    delete_id = input("Enter Asset ID to delete: ")
+
+    for asset in assets:
+        if asset["id"] == delete_id:
+            assets.remove(asset)
+            print("Asset deleted successfully!")
+            return
+
+    print("Asset not found!")
