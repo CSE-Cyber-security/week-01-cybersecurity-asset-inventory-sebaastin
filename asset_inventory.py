@@ -68,7 +68,7 @@ def search_asset():
             return
 
     print("Asset not found!")
-    def update_asset():
+def update_asset():
     update_id = input("Enter Asset ID to update: ")
 
     for asset in assets:
@@ -82,7 +82,7 @@ def search_asset():
             return
 
     print("Asset not found!")
-    def delete_asset():
+def delete_asset():
     delete_id = input("Enter Asset ID to delete: ")
 
     for asset in assets:
