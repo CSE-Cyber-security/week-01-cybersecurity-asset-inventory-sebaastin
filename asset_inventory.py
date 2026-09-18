@@ -70,3 +70,17 @@ def search_asset():
             return
 
     print("Asset not found!")
+    def update_asset():
+    update_id = input("Enter Asset ID to update: ")
+
+    for asset in assets:
+        if asset["id"] == update_id:
+            asset["ip"] = input("Enter new IP Address: ")
+            asset["os"] = input("Enter new Operating System: ")
+            asset["risk"] = input("Enter new Risk Level: ")
+            asset["status"] = input("Enter new Security Status: ")
+
+            print("Asset updated successfully!")
+            return
+
+    print("Asset not found!")
