@@ -38,7 +38,6 @@ def add_asset():
 
     assets.append(asset)
     print("Asset added successfully!")
-add_asset()
 def display_assets():
     print("\nCYBERSECURITY ASSET INVENTORY")
 
@@ -52,7 +51,6 @@ def display_assets():
         print("Department :", asset["department"])
         print("Risk Level :", asset["risk"])
         print("Status :", asset["status"])
-display_assets()
 def search_asset():
     search_id = input("Enter Asset ID to search: ")
 
