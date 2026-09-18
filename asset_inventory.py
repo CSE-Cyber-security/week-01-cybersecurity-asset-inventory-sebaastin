@@ -38,4 +38,4 @@ def add_asset():
 
     assets.append(asset)
     print("Asset added successfully!")
-    add_asset()
+add_asset()
