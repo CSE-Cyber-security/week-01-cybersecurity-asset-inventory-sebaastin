@@ -39,3 +39,16 @@ def add_asset():
     assets.append(asset)
     print("Asset added successfully!")
 add_asset()
+def display_assets():
+    print("\nCYBERSECURITY ASSET INVENTORY")
+
+    for asset in assets:
+        print("----------------------------")
+        print("Asset ID :", asset["id"])
+        print("Asset Name :", asset["name"])
+        print("Asset Type :", asset["type"])
+        print("IP Address :", asset["ip"])
+        print("OS :", asset["os"])
+        print("Department :", asset["department"])
+        print("Risk Level :", asset["risk"])
+        print("Status :", asset["status"])
