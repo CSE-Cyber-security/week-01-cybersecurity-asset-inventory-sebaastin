@@ -52,3 +52,4 @@ def display_assets():
         print("Department :", asset["department"])
         print("Risk Level :", asset["risk"])
         print("Status :", asset["status"])
+display_assets()
