@@ -1,5 +1,4 @@
 assets = []
-assets = []
 
 asset = {
     "id": "A101",
