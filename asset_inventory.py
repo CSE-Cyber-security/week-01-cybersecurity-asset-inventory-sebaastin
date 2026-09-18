@@ -53,3 +53,20 @@ def display_assets():
         print("Risk Level :", asset["risk"])
         print("Status :", asset["status"])
 display_assets()
+def search_asset():
+    search_id = input("Enter Asset ID to search: ")
+
+    for asset in assets:
+        if asset["id"] == search_id:
+            print("Asset Found!")
+            print("Asset ID :", asset["id"])
+            print("Asset Name :", asset["name"])
+            print("Asset Type :", asset["type"])
+            print("IP Address :", asset["ip"])
+            print("OS :", asset["os"])
+            print("Department :", asset["department"])
+            print("Risk Level :", asset["risk"])
+            print("Status :", asset["status"])
+            return
+
+    print("Asset not found!")
