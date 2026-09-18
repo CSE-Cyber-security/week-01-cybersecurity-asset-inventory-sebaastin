@@ -1,4 +1,7 @@
 assets = []
+asset_types = ["Workstation", "Server", "Router", "Switch", "Application"]
+risk_levels = ["Low", "Medium", "High", "Critical"]
+security_statuses = ["Secure", "Warning", "Vulnerable"]
 
 # Sample Asset
 asset = {
